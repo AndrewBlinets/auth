@@ -10,8 +10,9 @@ public class RestRequestToDao {
 
     public User getUserByLogin(String login) {
         RestTemplate restTemplate = new RestTemplate();
-        ResponseEntity<User> response = restTemplate.postForEntity( "http://192.168.1.125:8080/dao/users/auth",
-                login, User.class);
-        return response.getBody();
+        ResponseEntity<Object> response = restTemplate.postForEntity( "http://192.168.1.89:8080/dao/users/auth",
+                login, Object.class);
+        return null;
+//        return response.getBody();
     }
 }
