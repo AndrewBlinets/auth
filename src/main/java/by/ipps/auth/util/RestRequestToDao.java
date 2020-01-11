@@ -8,10 +8,14 @@ import org.springframework.web.client.RestTemplate;
 @Component
 public class RestRequestToDao {
 
+  //    protected static final String URL_SERVER = "http://192.168.1.125:8080/dao/users/auth";// server
+//    protected static final String URL_SERVER = "http://192.168.1.89:8082/dao/users/auth";// local work
+  protected static final String URL_SERVER = "http://localhost:8082/dao/users/auth";// local home
+
   public User getUserByLogin(String login) {
     RestTemplate restTemplate = new RestTemplate();
     ResponseEntity<User> response =
-        restTemplate.postForEntity("http://192.168.99.1:8082/dao/users/auth", login, User.class);
+        restTemplate.postForEntity(URL_SERVER, login, User.class);
     return response.getBody();
   }
 }
