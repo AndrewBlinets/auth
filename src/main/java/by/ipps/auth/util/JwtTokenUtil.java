@@ -26,6 +26,7 @@ public class JwtTokenUtil implements Serializable {
     claims.put("Email", user.getEmail());
     claims.put("Position", user.getPosition());
     claims.put("Roles", user.getRoles());
+    claims.put("DateLastChangePassword", new Date());
     return doGenerateToken(claims, user.getLogin());
   }
   // while creating the token -

@@ -1,5 +1,6 @@
 package by.ipps.auth.entity;
 
+import java.util.Date;
 import java.util.List;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -22,4 +23,5 @@ public class User {
   private long department;
   private boolean enabled;
   private boolean block;
+  private Date dateLastChangePassword;
 }
